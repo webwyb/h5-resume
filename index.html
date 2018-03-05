@@ -131,19 +131,6 @@
 	<!-- Swiper -->
 	<div class="swiper-container swiper-container-father">
 		<div class="swiper-wrapper">
-			<!-- 我的作品 -->
-			<div class="swiper-slide">
-				<h1>我的作品</h1>
-				<div class="swiper-container swiper-container-son">
-					<div class="swiper-wrapper" >
-						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/1)"></div>
-						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/2)"></div>
-						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/3)"></div>
-					</div>
-					<!-- Add Pagination -->
-					<div class="swiper-pagination" id="swiper-pagination2"></div>
-				</div>
-			</div>
 			<!-- 个人信息 -->
 			<div class="swiper-slide">
 				<!-- 头像 -->
@@ -205,11 +192,23 @@
 					</p>
 				</div>
 			</div>
-			
+			<!-- 我的作品 -->
+			<div class="swiper-slide">
+				<h1>我的作品</h1>
+				<div class="swiper-container swiper-container-son">
+					<div class="swiper-wrapper" >
+						<div class="swiper-slide" style="background-image:url(./images/1.jpeg)"></div>
+						<div class="swiper-slide" style="background-image:url(./images/2.jpeg)"></div>
+						<div class="swiper-slide" style="background-image:url(./images/3.jpeg)"></div>
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination swiper-pagination-son"></div>
+				</div>
+			</div>
 			
 		</div>
 		<!-- Add Pagination -->
-		<div class="swiper-pagination" id="swiper-pagination1"></div>
+		<div class="swiper-pagination swiper-pagination-father"></div>
 	</div>
 
 	<!-- Initialize Swiper -->
@@ -225,6 +224,7 @@
 		        	console.log('change slide')
 		        } 
 		    },
+
 		    // slider 切换的效果
 		    effect: 'coverflow',
 		    slidesPerView: 3,
@@ -238,17 +238,16 @@
 			spaceBetween: 30,
 			mousewheel: true,
 			pagination: {
-				el: '#swiper-pagination1',
+				el: '.swiper-pagination-father',
 				clickable: true,
 			},
 		});
 		var swiper2 = new Swiper('.swiper-container-son',{
-
 			effect: 'coverflow',
 			grabCursor: true,
 			centeredSlides: true,
 			slidesPerView: 'auto',
-			loop: true,
+			
 			coverflowEffect: {
 				rotate: 50,
 				stretch: 0,
@@ -257,7 +256,7 @@
 				slideShadows : true,
 			},
 			pagination: {
-				el: '.swiper-pagination',
+				el: '.swiper-pagination-son',
 			},
 		})
 	</script>
