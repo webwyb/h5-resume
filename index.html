@@ -120,7 +120,7 @@
 		opacity: 1;
 	}
 	/*我的项目*/
-	#swiper-container2 .swiper-slide{
+	.swiper-container-son .swiper-slide{
 		background-position: center;
 		background-size: cover;
 		width: 300px;
@@ -129,19 +129,16 @@
 </style>
 <body>
 	<!-- Swiper -->
-	<div class="swiper-container" id="swiper-container1">
+	<div class="swiper-container swiper-container-father">
 		<div class="swiper-wrapper">
 			<!-- 我的作品 -->
 			<div class="swiper-slide">
 				<h1>我的作品</h1>
-				<div class="swiper-container" id="swiper-container2">
+				<div class="swiper-container swiper-container-son">
 					<div class="swiper-wrapper" >
-						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/1)">
-						</div>
-						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/2)">
-						</div>
-						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/3)">
-						</div>
+						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/1)"></div>
+						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/2)"></div>
+						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/3)"></div>
 					</div>
 					<!-- Add Pagination -->
 					<div class="swiper-pagination" id="swiper-pagination2"></div>
@@ -217,7 +214,7 @@
 
 	<!-- Initialize Swiper -->
 	<script>
-		var swiper1 = new Swiper('#swiper-container1', {
+		var swiper1 = new Swiper('.swiper-container-father', {
 			on:{
 				init: function(){
         		swiperAnimateCache(this); //隐藏动画元素 
@@ -225,30 +222,33 @@
         	}, 
         	slideChangeTransitionEnd: function(){ 
 		        	swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+		        	console.log('change slide')
 		        } 
 		    },
-	    // slider 切换的效果
-	    effect: 'coverflow',
-	    slidesPerView: 3,
-	    centeredSlides: true,
-		// slider 切换的速度
-		speed: 1000,
-		// 开启循环
-		loop: true,
-		direction: 'vertical',
-		slidesPerView: 1,
-		spaceBetween: 30,
-		mousewheel: true,
-		pagination: {
-			el: '#swiper-pagination1',
-			clickable: true,
-		},
-	});
-		var swiper2 = new Swiper('#swiper-container2',{
+		    // slider 切换的效果
+		    effect: 'coverflow',
+		    slidesPerView: 3,
+		    centeredSlides: true,
+			// slider 切换的速度
+			speed: 1000,
+			// 开启循环
+			loop: true,
+			direction: 'vertical',
+			slidesPerView: 1,
+			spaceBetween: 30,
+			mousewheel: true,
+			pagination: {
+				el: '#swiper-pagination1',
+				clickable: true,
+			},
+		});
+		var swiper2 = new Swiper('.swiper-container-son',{
+
 			effect: 'coverflow',
 			grabCursor: true,
 			centeredSlides: true,
 			slidesPerView: 'auto',
+			loop: true,
 			coverflowEffect: {
 				rotate: 50,
 				stretch: 0,
@@ -257,7 +257,7 @@
 				slideShadows : true,
 			},
 			pagination: {
-				el: '#swiper-pagination2',
+				el: '.swiper-pagination',
 			},
 		})
 	</script>
