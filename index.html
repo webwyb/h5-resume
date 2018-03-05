@@ -20,10 +20,27 @@
 	body {
 		background: #eee;
 		font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-		font-size: 14px;
 		color:#000;
 		margin: 0;
 		padding: 0;
+	}
+	@media screen and (max-width: 320px){
+		html{
+			font-size: 15px;
+			background-color: red;
+		}
+	}
+	@media screen and (min-width: 321px) and (max-width: 750px){
+		html{
+			font-size: 20px;
+			background-color: green;
+		}
+	}
+	@media screen and (min-width: 751px){
+		html{
+			font-size: 25px;
+			background-color: yellow;
+		}
 	}
 	.swiper-container {
 		width: 100%;
@@ -35,8 +52,6 @@
 	}
 	.swiper-slide {
 		text-align: center;
-		font-size: 18px;
-
 		/* Center slide text vertically */
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -62,26 +77,82 @@
 	.ani{
 		transition-timing-function: ease-in-out;
 	}
-   /*引用外部字体*/	
-    @font-face {
-	  font-family: diyFont;
-	  src: url("./font/HYRunYuan-75W.ttf.ttf")
+	/*引用外部字体*/	
+	@font-face {
+		font-family: diyFont;
+		src: url("./font/HYRunYuan-75W.ttf.ttf")
 	}
+	h1{
+		text-shadow: 1px 2px #22c3aa,2px 4px #aee2d9;
+		color: #fff;
+		font-size: 2.5rem;
+	}
+	/* 首页*/
 	.avatar img{
 		border-radius: 50%;
-		width: 200px;
-		height: 200px;
+		width: 10rem;
+		height: 10rem;
 		border: 10px solid #aee2d9;
 	}
 	.userName{
 		font-family: diyFont;
-		font-size: 80px;
+		font-size: 2rem;
+	}
+	/*掌握技能*/
+	.skill{
+
+	}
+	.skill-group{
+		
+	}
+	.skill-item{
+		color: #fff;
+		font-size: 1rem;
+		border-radius: 5px;
+		padding: 7px;
+		background: #096254;
+	}
+	/*技能熟练程度*/
+	/*了解*/
+	.skill-understand{
+		opacity: 0.5;
+	}
+	/*掌握*/
+	.skill-grasp{
+		opacity: 0.75;
+	}
+	/*熟练*/
+	.skill-skilled{
+		opacity: 1;
 	}
 </style>
 <body>
 	<!-- Swiper -->
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<h1>擅长技术</h1>
+				<div class="skill">
+					<p class="skill-group">
+						<span class="skill-item skill-skilled">HTML</span>
+					</p>
+					<p class="skill-group">
+						<span class="skill-item skill-skilled">css</span>
+						<span class="skill-item skill-grasp">scss</span>
+					</p>
+					<p class="skill-group">
+						<span class="skill-item skill-grasp">javascript</span>
+						<span class="skill-item skill-grasp">Vue</span>
+						<span class="skill-item skill-understand">react</span>
+						<span class="skill-item skill-grasp">jquery</span>
+					</p>
+					<p class="skill-group">
+						<span class="skill-item skill-understand">微信小程序</span>
+						<span class="skill-item skill-understand">webapp</span>
+					</p>
+				</div>
+			</div>
+
 			<div class="swiper-slide">
 				<!-- 头像 -->
 				<div class="avatar ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
@@ -105,7 +176,7 @@
 				</div>
 				
 			</div>
-			<div class="swiper-slide">Slide 2</div>
+			
 			<div class="swiper-slide">Slide 3</div>
 			<div class="swiper-slide">Slide 4</div>
 		</div>
@@ -121,26 +192,26 @@
         		swiperAnimateCache(this); //隐藏动画元素 
         		swiperAnimate(this); //初始化完成开始动画
         	}, 
-	        	slideChangeTransitionEnd: function(){ 
+        	slideChangeTransitionEnd: function(){ 
 		        	swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
-		    } 
-	    },
+		        } 
+		    },
 	    // slider 切换的效果
 	    effect: 'coverflow',
 	    slidesPerView: 3,
-		centeredSlides: true,
+	    centeredSlides: true,
 		// slider 切换的速度
 		speed: 1000,
 		// 开启循环
 		loop: true,
-	    direction: 'vertical',
-	    slidesPerView: 1,
-	    spaceBetween: 30,
-	    mousewheel: true,
-	    pagination: {
-	    	el: '.swiper-pagination',
-	    	clickable: true,
-	    },
+		direction: 'vertical',
+		slidesPerView: 1,
+		spaceBetween: 30,
+		mousewheel: true,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
 	});
 </script>
 </body>
