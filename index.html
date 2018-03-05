@@ -2,14 +2,16 @@
 <html>
 <head>
 	<title>吴延彬</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- 移动端：布局视口 理想视口 视觉视口 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta charset="utf-8">
+	<!-- swiper css -->
+	<link rel="stylesheet" type="text/css" href="./css/swiper-4.1.6.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/animate.min.css">
 </head>
-<!-- swiper css -->
-<link rel="stylesheet" type="text/css" href="./css/swiper-4.1.6.min.css">
 <!-- swiper js -->
 <script type="text/javascript" src="./js/swiper-4.1.6.min.js"></script>
-
+<script type="text/javascript" src="./js/swiper.animate1.0.3.min.js"></script>
 <style>
 	html, body {
 		position: relative;
@@ -28,11 +30,12 @@
 		height: 100%;
 		margin-left: auto;
 		margin-right: auto;
+		/*默认的切换时间曲线*/
+		transition-timing-function: ease;
 	}
 	.swiper-slide {
 		text-align: center;
 		font-size: 18px;
-		background: #22c3aa;
 
 		/* Center slide text vertically */
 		display: -webkit-box;
@@ -50,14 +53,29 @@
 
 		flex-direction: column;
 	}
-	.avatar{
-		
+	.swiper-slide:nth-child(odd){
+		background: red;
+	}
+	.swiper-slide:nth-child(even){
+		background: #22c3aa;
+	}
+	.ani{
+		transition-timing-function: ease-in-out;
+	}
+   /*引用外部字体*/	
+    @font-face {
+	  font-family: diyFont;
+	  src: url("./font/HYRunYuan-75W.ttf.ttf")
 	}
 	.avatar img{
 		border-radius: 50%;
 		width: 200px;
 		height: 200px;
 		border: 10px solid #aee2d9;
+	}
+	.userName{
+		font-family: diyFont;
+		font-size: 80px;
 	}
 </style>
 <body>
@@ -66,32 +84,30 @@
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
 				<!-- 头像 -->
-				<div class="avatar">
-					<img src="images/avatar.jpeg" width="64" height="96">
+				<div class="avatar ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+					<img src="images/avatar.jpeg" >
 				</div>
 				<!-- 姓名 -->
-				<div>
+				<div class="ani userName" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.0s">
 					吴延彬
 				</div>
-				<div>
-					心有猛虎，细嗅蔷薇
+				<!-- 个人信息 -->
+				<div class="ani" swiper-animate-effect="rollIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.0s">
+					<div>
+						心有猛虎，细嗅蔷薇
+					</div>
+					<div>
+						前端开发工程师
+					</div>
+					<div>
+						beijingwyb@163.com
+					</div>
 				</div>
-				<div>
-					前端开发工程师
-				</div>
-				<div>
-					beijingwyb@163.com
-				</div>
+				
 			</div>
 			<div class="swiper-slide">Slide 2</div>
 			<div class="swiper-slide">Slide 3</div>
 			<div class="swiper-slide">Slide 4</div>
-			<div class="swiper-slide">Slide 5</div>
-			<div class="swiper-slide">Slide 6</div>
-			<div class="swiper-slide">Slide 7</div>
-			<div class="swiper-slide">Slide 8</div>
-			<div class="swiper-slide">Slide 9</div>
-			<div class="swiper-slide">Slide 10</div>
 		</div>
 		<!-- Add Pagination -->
 		<div class="swiper-pagination"></div>
@@ -100,16 +116,25 @@
 	<!-- Initialize Swiper -->
 	<script>
 		var swiper = new Swiper('.swiper-container', {
-			direction: 'vertical',
-			slidesPerView: 1,
-			spaceBetween: 30,
-			mousewheel: true,
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-		});
-	</script>
+			on:{
+				init: function(){
+        		swiperAnimateCache(this); //隐藏动画元素 
+        		swiperAnimate(this); //初始化完成开始动画
+        	}, 
+        	slideChangeTransitionEnd: function(){ 
+	        	swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+	        } 
+	    },
+	    direction: 'vertical',
+	    slidesPerView: 1,
+	    spaceBetween: 30,
+	    mousewheel: true,
+	    pagination: {
+	    	el: '.swiper-pagination',
+	    	clickable: true,
+	    },
+	});
+</script>
 </body>
 </body>
 </html>
