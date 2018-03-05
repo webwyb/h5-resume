@@ -16,30 +16,24 @@
 	html, body {
 		position: relative;
 		height: 100%;
-	}
-	body {
-		background: #eee;
+		color: #fff;
 		font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-		color:#000;
 		margin: 0;
 		padding: 0;
 	}
 	@media screen and (max-width: 320px){
 		html{
 			font-size: 15px;
-			background-color: red;
 		}
 	}
 	@media screen and (min-width: 321px) and (max-width: 750px){
 		html{
 			font-size: 20px;
-			background-color: green;
 		}
 	}
 	@media screen and (min-width: 751px){
 		html{
 			font-size: 25px;
-			background-color: yellow;
 		}
 	}
 	.swiper-container {
@@ -69,7 +63,7 @@
 		flex-direction: column;
 	}
 	.swiper-slide:nth-child(odd){
-		background: red;
+		background: #22c3aa;
 	}
 	.swiper-slide:nth-child(even){
 		background: #22c3aa;
@@ -128,31 +122,68 @@
 </style>
 <body>
 	<!-- Swiper -->
-	<div class="swiper-container">
+	<div class="swiper-container" id="swiper-container1">
 		<div class="swiper-wrapper">
+			<!-- 我的作品 -->
 			<div class="swiper-slide">
-				<h1>擅长技术</h1>
+				
+				<h1>我的作品</h1>
+				<div class="swiper-container" id="swiper-container2">
+					<div class="swiper-wrapper" >
+						<div class="swiper-slide">
+							<img src="./images/avatar.jpeg" width="300" height="300">
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/avatar.jpeg" width="300" height="300">
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/avatar.jpeg" width="300" height="300">
+						</div>
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination" id="swiper-pagination2"></div>
+				</div>
+				
+			</div>
+			<!-- 工作经历 -->
+			<div class="swiper-slide">
+				<h1 class="ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">教育及工作经历</h1>
+				<div class="work">
+					<div class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+						<p>2013.09-2017.6</p>
+						<p>哈尔滨商业大学 本科 软件工程</p>
+					</div>
+					<div class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+						<p>2017.06-至今</p>
+						<p>霍尔果斯万殊融资租赁 前端开发</p>
+					</div>
+					
+				</div>
+			</div>
+			<!-- 我的技能 -->
+			<div class="swiper-slide">
+				<h1 class="ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">擅长技术</h1>
 				<div class="skill">
-					<p class="skill-group">
+					<p class="skill-group ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
 						<span class="skill-item skill-skilled">HTML</span>
 					</p>
-					<p class="skill-group">
+					<p class="skill-group ani" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
 						<span class="skill-item skill-skilled">css</span>
 						<span class="skill-item skill-grasp">scss</span>
 					</p>
-					<p class="skill-group">
+					<p class="skill-group ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
 						<span class="skill-item skill-grasp">javascript</span>
 						<span class="skill-item skill-grasp">Vue</span>
 						<span class="skill-item skill-understand">react</span>
 						<span class="skill-item skill-grasp">jquery</span>
 					</p>
-					<p class="skill-group">
+					<p class="skill-group ani" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
 						<span class="skill-item skill-understand">微信小程序</span>
 						<span class="skill-item skill-understand">webapp</span>
 					</p>
 				</div>
 			</div>
-
+			<!-- 个人信息 -->
 			<div class="swiper-slide">
 				<!-- 头像 -->
 				<div class="avatar ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
@@ -174,19 +205,16 @@
 						beijingwyb@163.com
 					</div>
 				</div>
-				
 			</div>
-			
-			<div class="swiper-slide">Slide 3</div>
-			<div class="swiper-slide">Slide 4</div>
+
 		</div>
 		<!-- Add Pagination -->
-		<div class="swiper-pagination"></div>
+		<div class="swiper-pagination" id="swiper-pagination1"></div>
 	</div>
 
 	<!-- Initialize Swiper -->
 	<script>
-		var swiper = new Swiper('.swiper-container', {
+		var swiper1 = new Swiper('#swiper-container1', {
 			on:{
 				init: function(){
         		swiperAnimateCache(this); //隐藏动画元素 
@@ -209,11 +237,28 @@
 		spaceBetween: 30,
 		mousewheel: true,
 		pagination: {
-			el: '.swiper-pagination',
+			el: '#swiper-pagination1',
 			clickable: true,
 		},
 	});
-</script>
+		var swiper2 = new Swiper('#swiper-container2',{
+			effect: 'coverflow',
+			grabCursor: true,
+			centeredSlides: true,
+			slidesPerView: 'auto',
+			loop: true,
+			coverflowEffect: {
+				rotate: 50,
+				stretch: 0,
+				depth: 100,
+				modifier: 1,
+				slideShadows : true,
+			},
+			pagination: {
+				el: '#swiper-pagination2',
+			},
+		})
+	</script>
 </body>
 </body>
 </html>
