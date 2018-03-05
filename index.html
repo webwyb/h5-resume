@@ -74,7 +74,7 @@
 	/*引用外部字体*/	
 	@font-face {
 		font-family: diyFont;
-		src: url("./font/HYRunYuan-75W.ttf.ttf")
+		src: url("./font/HYRunYuan-75W.ttf")
 	}
 	h1{
 		text-shadow: 1px 2px #22c3aa,2px 4px #aee2d9;
@@ -119,6 +119,13 @@
 	.skill-skilled{
 		opacity: 1;
 	}
+	/*我的项目*/
+	#swiper-container2 .swiper-slide{
+		background-position: center;
+		background-size: cover;
+		width: 300px;
+		height: 300px;
+	}
 </style>
 <body>
 	<!-- Swiper -->
@@ -126,24 +133,42 @@
 		<div class="swiper-wrapper">
 			<!-- 我的作品 -->
 			<div class="swiper-slide">
-				
 				<h1>我的作品</h1>
 				<div class="swiper-container" id="swiper-container2">
 					<div class="swiper-wrapper" >
-						<div class="swiper-slide">
-							<img src="./images/avatar.jpeg" width="300" height="300">
+						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/1)">
 						</div>
-						<div class="swiper-slide">
-							<img src="./images/avatar.jpeg" width="300" height="300">
+						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/2)">
 						</div>
-						<div class="swiper-slide">
-							<img src="./images/avatar.jpeg" width="300" height="300">
+						<div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/3)">
 						</div>
 					</div>
 					<!-- Add Pagination -->
 					<div class="swiper-pagination" id="swiper-pagination2"></div>
 				</div>
-				
+			</div>
+			<!-- 个人信息 -->
+			<div class="swiper-slide">
+				<!-- 头像 -->
+				<div class="avatar ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+					<img src="images/avatar.jpeg" >
+				</div>
+				<!-- 姓名 -->
+				<div class="ani userName" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.0s">
+					吴延彬
+				</div>
+				<!-- 个人信息 -->
+				<div class="ani" swiper-animate-effect="rollIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.0s">
+					<div>
+						心有猛虎，细嗅蔷薇
+					</div>
+					<div>
+						前端开发工程师
+					</div>
+					<div>
+						beijingwyb@163.com
+					</div>
+				</div>
 			</div>
 			<!-- 工作经历 -->
 			<div class="swiper-slide">
@@ -183,30 +208,8 @@
 					</p>
 				</div>
 			</div>
-			<!-- 个人信息 -->
-			<div class="swiper-slide">
-				<!-- 头像 -->
-				<div class="avatar ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-					<img src="images/avatar.jpeg" >
-				</div>
-				<!-- 姓名 -->
-				<div class="ani userName" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.0s">
-					吴延彬
-				</div>
-				<!-- 个人信息 -->
-				<div class="ani" swiper-animate-effect="rollIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.0s">
-					<div>
-						心有猛虎，细嗅蔷薇
-					</div>
-					<div>
-						前端开发工程师
-					</div>
-					<div>
-						beijingwyb@163.com
-					</div>
-				</div>
-			</div>
-
+			
+			
 		</div>
 		<!-- Add Pagination -->
 		<div class="swiper-pagination" id="swiper-pagination1"></div>
@@ -246,7 +249,6 @@
 			grabCursor: true,
 			centeredSlides: true,
 			slidesPerView: 'auto',
-			loop: true,
 			coverflowEffect: {
 				rotate: 50,
 				stretch: 0,
