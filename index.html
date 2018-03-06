@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/swiper-4.1.6.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/animate.min.css">
 </head>
+
 <!-- swiper js -->
 <script type="text/javascript" src="./js/swiper-4.1.6.min.js"></script>
 <script type="text/javascript" src="./js/swiper.animate1.0.3.min.js"></script>
@@ -21,7 +22,7 @@
 		margin: 0;
 		padding: 0;
 	}
-	@media screen and (max-width: 320px){
+	/*@media screen and (max-width: 320px){
 		html{
 			font-size: 15px;
 		}
@@ -35,7 +36,7 @@
 		html{
 			font-size: 25px;
 		}
-	}
+	}*/
 	.swiper-container {
 		width: 100%;
 		height: 100%;
@@ -84,8 +85,8 @@
 	/* 首页*/
 	.avatar img{
 		border-radius: 50%;
-		width: 10rem;
-		height: 10rem;
+		width: 8rem;
+		height: 8rem;
 		border: 10px solid #aee2d9;
 	}
 	.userName{
@@ -123,8 +124,8 @@
 	.swiper-container-son .swiper-slide{
 		background-position: center;
 		background-size: cover;
-		width: 300px;
-		height: 300px;
+		width: 10rem;
+		height: 10rem;
 	}
 </style>
 <body>
@@ -194,8 +195,8 @@
 			</div>
 			<!-- 我的作品 -->
 			<div class="swiper-slide">
-				<h1>我的作品</h1>
-				<div class="swiper-container swiper-container-son">
+				<h1 class="ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">我的作品</h1>
+				<div class="swiper-container swiper-container-son ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
 					<div class="swiper-wrapper" >
 						<div class="swiper-slide" style="background-image:url(./images/1.jpeg)"></div>
 						<div class="swiper-slide" style="background-image:url(./images/2.jpeg)"></div>
@@ -210,7 +211,19 @@
 		<!-- Add Pagination -->
 		<div class="swiper-pagination swiper-pagination-father"></div>
 	</div>
-
+	<!-- 获取用户视图，根据不同视图的宽度确定相应的rem -->
+	<script type="text/javascript">
+		// 获取视图的宽度
+		
+			let htmlWidth = document.documentElement.clientWidth 
+							|| document.body.clientWidth;
+			let htmlDom = document.getElementsByTagName('html')[0];
+			// 如果视图的宽度大于750，则rem为定值
+			let fontSize = 37.5
+			fontSize = htmlWidth >= 750 ? fontSize : htmlWidth/20 
+			htmlDom.style.fontSize = fontSize + 'px';	
+		
+	</script>
 	<!-- Initialize Swiper -->
 	<script>
 		var swiper1 = new Swiper('.swiper-container-father', {
