@@ -1,0 +1,98 @@
+html, body {
+		position: relative;
+		height: 100%;
+		color: #fff;
+		font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+	}
+	.swiper-container {
+		width: 100%;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		/*默认的切换时间曲线*/
+		transition-timing-function: ease;
+	}
+	.swiper-slide {
+		text-align: center;
+		/* Center slide text vertically */
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+
+		flex-direction: column;
+	}
+	.swiper-slide:nth-child(odd){
+		background: #22c3aa;
+	}
+	.swiper-slide:nth-child(even){
+		background: #22c3aa;
+	}
+	.ani{
+		transition-timing-function: ease-in-out;
+	}
+	/*引用外部字体*/	
+	@font-face {
+		font-family: diyFont;
+		src: url("../font/HYRunYuan-75W.ttf")
+	}
+	h1{
+		text-shadow: 1px 2px #22c3aa,2px 4px #aee2d9;
+		color: #fff;
+		font-size: 2.5rem;
+	}
+	/* 首页*/
+	.avatar img{
+		border-radius: 50%;
+		width: 8rem;
+		height: 8rem;
+		border: 10px solid #aee2d9;
+	}
+	.userName{
+		font-family: diyFont;
+		font-size: 2rem;
+	}
+	/*掌握技能*/
+	.skill{
+
+	}
+	.skill-group{
+		
+	}
+	.skill-item{
+		color: #fff;
+		font-size: 1rem;
+		border-radius: 5px;
+		padding: 7px;
+		background: #096254;
+	}
+	/*技能熟练程度*/
+	/*了解*/
+	.skill-understand{
+		opacity: 0.5;
+	}
+	/*掌握*/
+	.skill-grasp{
+		opacity: 0.75;
+	}
+	/*熟练*/
+	.skill-skilled{
+		opacity: 1;
+	}
+	/*我的项目*/
+	.swiper-container-son .swiper-slide{
+		background-position: center;
+		background-size: cover;
+		width: 10rem;
+		height: 10rem;
+	}

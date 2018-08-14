@@ -1,133 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>吴延彬</title>
+	<title>吴延彬简历</title>
 	<!-- 移动端：布局视口 理想视口 视觉视口 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta charset="utf-8">
 	<!-- swiper css -->
 	<link rel="stylesheet" type="text/css" href="./css/swiper-4.1.6.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 
 <!-- swiper js -->
 <script type="text/javascript" src="./js/swiper-4.1.6.min.js"></script>
 <script type="text/javascript" src="./js/swiper.animate1.0.3.min.js"></script>
-<style>
-	html, body {
-		position: relative;
-		height: 100%;
-		color: #fff;
-		font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-		margin: 0;
-		padding: 0;
-	}
-	/*@media screen and (max-width: 320px){
-		html{
-			font-size: 15px;
-		}
-	}
-	@media screen and (min-width: 321px) and (max-width: 750px){
-		html{
-			font-size: 20px;
-		}
-	}
-	@media screen and (min-width: 751px){
-		html{
-			font-size: 25px;
-		}
-	}*/
-	.swiper-container {
-		width: 100%;
-		height: 100%;
-		margin-left: auto;
-		margin-right: auto;
-		/*默认的切换时间曲线*/
-		transition-timing-function: ease;
-	}
-	.swiper-slide {
-		text-align: center;
-		/* Center slide text vertically */
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
-		-webkit-justify-content: center;
-		justify-content: center;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
-		-webkit-align-items: center;
-		align-items: center;
-
-		flex-direction: column;
-	}
-	.swiper-slide:nth-child(odd){
-		background: #22c3aa;
-	}
-	.swiper-slide:nth-child(even){
-		background: #22c3aa;
-	}
-	.ani{
-		transition-timing-function: ease-in-out;
-	}
-	/*引用外部字体*/	
-	@font-face {
-		font-family: diyFont;
-		src: url("./font/HYRunYuan-75W.ttf")
-	}
-	h1{
-		text-shadow: 1px 2px #22c3aa,2px 4px #aee2d9;
-		color: #fff;
-		font-size: 2.5rem;
-	}
-	/* 首页*/
-	.avatar img{
-		border-radius: 50%;
-		width: 8rem;
-		height: 8rem;
-		border: 10px solid #aee2d9;
-	}
-	.userName{
-		font-family: diyFont;
-		font-size: 2rem;
-	}
-	/*掌握技能*/
-	.skill{
-
-	}
-	.skill-group{
-		
-	}
-	.skill-item{
-		color: #fff;
-		font-size: 1rem;
-		border-radius: 5px;
-		padding: 7px;
-		background: #096254;
-	}
-	/*技能熟练程度*/
-	/*了解*/
-	.skill-understand{
-		opacity: 0.5;
-	}
-	/*掌握*/
-	.skill-grasp{
-		opacity: 0.75;
-	}
-	/*熟练*/
-	.skill-skilled{
-		opacity: 1;
-	}
-	/*我的项目*/
-	.swiper-container-son .swiper-slide{
-		background-position: center;
-		background-size: cover;
-		width: 10rem;
-		height: 10rem;
-	}
-</style>
 <body>
 	<!-- Swiper -->
 	<div class="swiper-container swiper-container-father">
@@ -164,8 +50,12 @@
 						<p>哈尔滨商业大学 本科 软件工程</p>
 					</div>
 					<div class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
-						<p>2017.06-至今</p>
+						<p>2017.06-2018.07</p>
 						<p>霍尔果斯万殊融资租赁 前端开发</p>
+					</div>
+					<div class="ani" swiper-animate-effect="fadeInTop" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+						<p>2018.07-至今</p>
+						<p>杭州大搜车汽车服务 前端开发</p>
 					</div>
 					
 				</div>
@@ -182,10 +72,11 @@
 						<span class="skill-item skill-grasp">scss</span>
 					</p>
 					<p class="skill-group ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
-						<span class="skill-item skill-grasp">javascript</span>
+						<span class="skill-item skill-grasp">JS</span>
 						<span class="skill-item skill-grasp">Vue</span>
-						<span class="skill-item skill-understand">react</span>
-						<span class="skill-item skill-grasp">jquery</span>
+						<span class="skill-item skill-understand">React</span>
+						<span class="skill-item skill-grasp">RN</span>
+						<span class="skill-item skill-grasp">Jquery</span>
 					</p>
 					<p class="skill-group ani" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
 						<span class="skill-item skill-understand">微信小程序</span>
@@ -198,7 +89,9 @@
 				<h1 class="ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">我的作品</h1>
 				<div class="swiper-container swiper-container-son ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
 					<div class="swiper-wrapper" >
-						<div class="swiper-slide" style="background-image:url(./images/1.jpeg)"></div>
+						<a href="./queryMedia.html">
+							<div class="swiper-slide" style="background-image:url(./images/1.jpeg)"></div>
+						</a>
 						<div class="swiper-slide" style="background-image:url(./images/2.jpeg)"></div>
 						<div class="swiper-slide" style="background-image:url(./images/3.jpeg)"></div>
 					</div>
@@ -224,55 +117,8 @@
 			htmlDom.style.fontSize = fontSize + 'px';	
 		
 	</script>
-	<!-- Initialize Swiper -->
-	<script>
-		var swiper1 = new Swiper('.swiper-container-father', {
-			on:{
-				init: function(){
-        		swiperAnimateCache(this); //隐藏动画元素 
-        		swiperAnimate(this); //初始化完成开始动画
-        	}, 
-        	slideChangeTransitionEnd: function(){ 
-		        	swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
-		        	console.log('change slide')
-		        } 
-		    },
-
-		    // slider 切换的效果
-		    effect: 'coverflow',
-		    slidesPerView: 3,
-		    centeredSlides: true,
-			// slider 切换的速度
-			speed: 1000,
-			// 开启循环
-			loop: true,
-			direction: 'vertical',
-			slidesPerView: 1,
-			spaceBetween: 30,
-			mousewheel: true,
-			pagination: {
-				el: '.swiper-pagination-father',
-				clickable: true,
-			},
-		});
-		var swiper2 = new Swiper('.swiper-container-son',{
-			effect: 'coverflow',
-			grabCursor: true,
-			centeredSlides: true,
-			slidesPerView: 'auto',
-			
-			coverflowEffect: {
-				rotate: 50,
-				stretch: 0,
-				depth: 100,
-				modifier: 1,
-				slideShadows : true,
-			},
-			pagination: {
-				el: '.swiper-pagination-son',
-			},
-		})
-	</script>
+	<!-- init swiper -->
+	<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </body>
 </html>
